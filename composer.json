@@ -1,7 +1,7 @@
 {
     "name": "astrotomic/laravel-weserv-images",
     "type": "library",
-    "description": "A fluent URL generator for images.weserv.nl",
+    "description": "A fluent URL generator for images.weserv.nl with Laravel bindings.",
     "keywords": [
         "astrotomic",
         "laravel-weserv-images",

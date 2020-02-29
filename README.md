@@ -8,7 +8,7 @@
 [![StyleCI](https://styleci.io/repos/243980144/shield)](https://styleci.io/repos/243980144)
 [![Total Downloads](https://img.shields.io/packagist/dt/astrotomic/laravel-weserv-images.svg?label=Downloads&style=flat-square)](https://packagist.org/packages/astrotomic/laravel-weserv-images)
 
-This package provides a fluent PHP OOP builder for [images.weserv.nl](https://images.weserv.nl).
+This package provides a Laravel wrapper for the fluent URL builder [astrotomic/php-weserv-images](https://github.com/Astrotomic/php-weserv-images).
 
 ## Installation
 
