@@ -1,0 +1,57 @@
+{
+    "name": "astrotomic/laravel-weserv-images",
+    "type": "library",
+    "description": "A fluent URL generator for images.weserv.nl",
+    "keywords": [
+        "astrotomic",
+        "laravel-weserv-images",
+        "weserv",
+        "images"
+    ],
+    "homepage": "https://github.com/astrotomic/laravel-weserv-images",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tom Witkowski",
+            "email": "gummibeer@astrotomic.info",
+            "homepage": "https://gummibeer.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "astrotomic/php-weserv-images": "^0.1.0",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Astrotomic\\Weserv\\Images\\Laravel\\WeservImagesServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Astrotomic\\Weserv\\Images\\Laravel\\": "src"
+        },
+        "files": [
+            "src/weserv.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Astrotomic\\Weserv\\Images\\Laravel\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    }
+}
