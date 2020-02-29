@@ -18,11 +18,20 @@ You can install the package via composer:
 composer require astrotomic/laravel-weserv-images
 ```
 
+```bash
+php artisan vendor:publish --provider="\Astrotomic\Weserv\Images\Laravel\WeservImagesServiceProvider" --tag=config
+```
+
 ## Usage
 
 ```php
-// usage example
+use Astrotomic\Weserv\Images\Enums\Fit;
+
+echo weserv('https://example.com/image.jpg')->w(512)->h(512)->we()->fit(Fit::INSIDE);                      
+// https://images.weserv.nl/?w=512&h=512&we=1&fit=inside&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg
 ```
+
+![](https://images.weserv.nl/?w=512&h=512&we=1&fit=inside&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg)
 
 ### Testing
 
