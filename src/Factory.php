@@ -21,7 +21,7 @@ class Factory
             $this->config->get('weserv-images.base_url')
         );
 
-        foreach($this->config->get('weserv-images.default_options') as $option => $values) {
+        foreach ($this->config->get('weserv-images.default_options') as $option => $values) {
             call_user_func_array([$url, $option], $values);
         }
 

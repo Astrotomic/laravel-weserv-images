@@ -13,7 +13,7 @@ return [
      * Key is the method name and as value an array with the method arguments.
      */
     'default_options' => [
-//        'we' => [], // without enlargment
-//        'dpr' => [2], // retina by default
+        //        'we' => [], // without enlargment
+        //        'dpr' => [2], // retina by default
     ],
 ];
