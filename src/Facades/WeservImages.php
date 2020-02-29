@@ -3,7 +3,7 @@
 namespace Astrotomic\Weserv\Images\Laravel\Facades;
 
 use Astrotomic\Weserv\Images\Laravel\Factory;
-use Astrotomic\Weserv\Images\Url;
+use Astrotomic\Weserv\Images\Laravel\Url;
 use Illuminate\Support\Facades\Facade;
 
 /**

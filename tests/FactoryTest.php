@@ -4,8 +4,8 @@ namespace Astrotomic\LaravelWeservImages\Tests;
 
 use Astrotomic\Weserv\Images\Laravel\Facades\WeservImages;
 use Astrotomic\Weserv\Images\Laravel\Factory;
+use Astrotomic\Weserv\Images\Laravel\Url;
 use Astrotomic\Weserv\Images\Laravel\WeservImagesServiceProvider;
-use Astrotomic\Weserv\Images\Url;
 use Orchestra\Testbench\TestCase;
 
 final class FactoryTest extends TestCase

@@ -2,7 +2,6 @@
 
 namespace Astrotomic\Weserv\Images\Laravel;
 
-use Astrotomic\Weserv\Images\Url;
 use Illuminate\Config\Repository as ConfigRepository;
 
 class Factory

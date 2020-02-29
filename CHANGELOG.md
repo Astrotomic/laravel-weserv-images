@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-weserv-images` will be documented in this file
 
+## 0.2.1 - 2020-02-29
+
+- fix used `Url` class
+
 ## 0.2.0 - 2020-02-29
 
 - implement several Laravel interfaces: `Htmlable`, `Renderable`, `Responsable`, `Jsonable`, `JsonSerializable`, `Arrayable`
