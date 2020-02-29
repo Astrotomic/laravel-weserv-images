@@ -19,7 +19,7 @@ composer require astrotomic/laravel-weserv-images
 ```
 
 ```bash
-php artisan vendor:publish --provider="\Astrotomic\Weserv\Images\Laravel\WeservImagesServiceProvider" --tag=config
+php artisan vendor:publish --provider="Astrotomic\Weserv\Images\Laravel\WeservImagesServiceProvider" --tag=config
 ```
 
 ## Usage
