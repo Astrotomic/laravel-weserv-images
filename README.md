@@ -33,6 +33,22 @@ echo weserv('https://example.com/image.jpg')->w(512)->h(512)->we()->fit(Fit::INS
 
 ![](https://images.weserv.nl/?w=512&h=512&we=1&fit=inside&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg)
 
+### HTML
+
+#### <picture>
+
+The `toPicture()` method allows you to create a `<picture>` tag with `webp` support and `srcset`.
+The following example will create a `<picture>` tag with a `webp` source and a `srcset` for normal and retina screens.
+
+```php
+use Astrotomic\Weserv\Images\Laravel\Url;
+
+echo weserv('https://example.com/image.jpg')->toPicture([
+    '1x' => fn(Url $url) => $url->dpr(1),
+    '2x' => fn(Url $url) => $url->dpr(2),
+], 'The alt text for this image', 'any css classes');
+```
+
 ### Testing
 
 ``` bash
