@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-weserv-images` will be documented in this file
 
+## 0.3.0 - 2020-03-01
+
+- add `toPicture()` method
+
 ## 0.2.1 - 2020-02-29
 
 - fix used `Url` class
