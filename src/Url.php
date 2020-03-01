@@ -77,7 +77,7 @@ class Url extends BaseUrl implements Htmlable, Renderable, Responsable, Jsonable
     protected function getSrcSet(array $srcSet): string
     {
         return implode(', ', array_map(
-            fn(Closure $callback, string $size) => $callback(clone $this).' '.$size,
+            fn (Closure $callback, string $size) => $callback(clone $this).' '.$size,
             $srcSet, array_keys($srcSet)
         ));
     }
