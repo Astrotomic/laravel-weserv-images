@@ -44,9 +44,13 @@ The following example will create a `<picture>` tag with a `webp` source and a `
 use Astrotomic\Weserv\Images\Laravel\Url;
 
 echo weserv('https://example.com/image.jpg')->toPicture([
+    'alt' => 'The alt text for this image', 
+    'class' => 'rounded',
+    'loading' => 'lazy',
+], [
     '1x' => fn(Url $url) => $url->dpr(1),
     '2x' => fn(Url $url) => $url->dpr(2),
-], 'The alt text for this image', 'any css classes');
+]);
 ```
 
 ### Testing
