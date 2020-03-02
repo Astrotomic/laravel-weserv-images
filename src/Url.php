@@ -36,7 +36,6 @@ class Url extends BaseUrl implements Htmlable, Renderable, Responsable, Jsonable
         $attributes = $this->getAttributes($attr);
 
         $webpAttr['type'] = 'image/webp';
-        $webpAttr['src'] = (clone $this)->output('webp');
         if (! empty($srcSet)) {
             $webpAttr['srcset'] = $webpAttr['src']->getSrcSet($srcSet);
         }
