@@ -27,7 +27,11 @@ php artisan vendor:publish --provider="Astrotomic\Weserv\Images\Laravel\WeservIm
 ```php
 use Astrotomic\Weserv\Images\Enums\Fit;
 
-echo weserv('https://images.weserv.nl/lichtenstein.jpg')->w(512)->h(512)->we()->fit(Fit::INSIDE);                      
+echo weserv('https://images.weserv.nl/lichtenstein.jpg')
+    ->w(512)
+    ->h(512)
+    ->we()
+    ->fit(Fit::INSIDE);
 // https://images.weserv.nl/?w=512&h=512&we=1&fit=inside&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg
 ```
 
@@ -44,14 +48,19 @@ The following example will create a `<picture>` tag with a `webp` source and a `
 use Astrotomic\Weserv\Images\Laravel\Url;
 use Astrotomic\Weserv\Images\Enums\Fit;
 
-echo weserv('https://images.weserv.nl/lichtenstein.jpg')->w(512)->h(512)->we()->fit(Fit::INSIDE)->toPicture([
-    'alt' => 'The alt text for this image', 
-    'class' => 'rounded',
-    'loading' => 'lazy',
-], [
-    '1x' => fn(Url $url) => $url->dpr(1),
-    '2x' => fn(Url $url) => $url->dpr(2),
-]);
+echo weserv('https://images.weserv.nl/lichtenstein.jpg')
+    ->w(512)
+    ->h(512)
+    ->we()
+    ->fit(Fit::INSIDE)
+    ->toPicture([
+        'alt' => 'The alt text for this image', 
+        'class' => 'rounded',
+        'loading' => 'lazy',
+    ], [
+        '1x' => fn(Url $url) => $url->dpr(1),
+        '2x' => fn(Url $url) => $url->dpr(2),
+    ]);
 ```
 
 ```html
@@ -60,11 +69,6 @@ echo weserv('https://images.weserv.nl/lichtenstein.jpg')->w(512)->h(512)->we()->
    <img alt="The alt text for this image" class="rounded" loading="lazy" src="https://images.weserv.nl?w=512&h=512&we=1&fit=inside&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg" srcset="https://images.weserv.nl?w=512&h=512&we=1&fit=inside&dpr=1&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 1x, https://images.weserv.nl?w=512&h=512&we=1&fit=inside&dpr=2&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 2x" />
 </picture>
 ```
-
-<picture>
-   <source type="image/webp" src="https://images.weserv.nl?w=512&h=512&we=1&fit=inside&output=webp&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg" srcset="https://images.weserv.nl?w=512&h=512&we=1&fit=inside&output=webp&dpr=1&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 1x, https://images.weserv.nl?w=512&h=512&we=1&fit=inside&output=webp&dpr=2&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 2x" />
-   <img alt="The alt text for this image" class="rounded" loading="lazy" src="https://images.weserv.nl?w=512&h=512&we=1&fit=inside&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg" srcset="https://images.weserv.nl?w=512&h=512&we=1&fit=inside&dpr=1&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 1x, https://images.weserv.nl?w=512&h=512&we=1&fit=inside&dpr=2&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 2x" />
-</picture>
 
 ### Testing
 
