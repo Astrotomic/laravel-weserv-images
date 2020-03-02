@@ -21,7 +21,7 @@
     "require": {
         "php": "^7.4",
         "ext-json": "*",
-        "astrotomic/php-weserv-images": "^0.2.0",
+        "astrotomic/php-weserv-images": "^0.3.0",
         "illuminate/contracts": "^6.0",
         "illuminate/http": "^6.0",
         "illuminate/support": "^6.0"
