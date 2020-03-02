@@ -2,6 +2,11 @@
 
 All notable changes to `laravel-weserv-images` will be documented in this file
 
+## 0.4.0 - 2020-03-02
+
+- BC: change method signature of `toPicture(array $attr = [], array $srcSet = [])`
+this was done to have the same signature as `toImg()` and allow all custom attributes
+
 ## 0.3.0 - 2020-03-01
 
 - add `toPicture()` method
