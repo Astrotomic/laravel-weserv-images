@@ -2,6 +2,11 @@
 
 All notable changes to `laravel-weserv-images` will be documented in this file
 
+## 0.4.1
+
+- remove deprecated `<source src>`
+> [Deprecation] <source src> with a <picture> parent is invalid and therefore ignored. Please use <source srcset> instead.
+
 ## 0.4.0 - 2020-03-02
 
 - BC: change method signature of `toPicture(array $attr = [], array $srcSet = [])`
