@@ -2,7 +2,7 @@
 
 All notable changes to `laravel-weserv-images` will be documented in this file
 
-## 0.4.1
+## 0.4.1 - 2020-03-02
 
 - remove deprecated `<source src>`
 > [Deprecation] <source src> with a <picture> parent is invalid and therefore ignored. Please use <source srcset> instead.
