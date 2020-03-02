@@ -4,7 +4,6 @@ namespace Astrotomic\Weserv\Images\Laravel;
 
 use Astrotomic\Weserv\Images\Enums\Output;
 use Astrotomic\Weserv\Images\Url as BaseUrl;
-use Closure;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Jsonable;
@@ -28,16 +27,26 @@ class Url extends BaseUrl implements Htmlable, Renderable, Responsable, Jsonable
         return $this->toImg();
     }
 
-    public function toPicture(array $srcSet = [], string $alt = '', string $class = ''): HtmlString
+    public function toPicture(array $attr = [], array $srcSet = []): HtmlString
     {
-        $imgSrcSet = $this->getSrcSet($srcSet);
-        $webpSrcSet = (clone $this)->output('webp')->getSrcSet($srcSet);
+        $attr['src'] = $this->toUrl();
+        if (! empty($srcSet)) {
+            $attr['srcset'] = $this->getSrcSet($srcSet);
+        }
+        $attributes = $this->getAttributes($attr);
+
+        $webpAttr['type'] = 'image/webp';
+        $webpAttr['src'] = (clone $this)->output('webp');
+        if (! empty($srcSet)) {
+            $webpAttr['srcset'] = $webpAttr['src']->getSrcSet($srcSet);
+        }
+        $webpAttributes = $this->getAttributes($webpAttr);
 
         return new HtmlString(
             <<<HTML
             <picture>
-                <source srcset="{$webpSrcSet}" type="image/webp" />
-                <img src="{$this}" srcset="{$imgSrcSet}" alt="{$alt}" class="{$class}" />
+                <source {$webpAttributes} />
+                <img {$attributes} />
             </picture>
             HTML
         );
@@ -72,13 +81,5 @@ class Url extends BaseUrl implements Htmlable, Renderable, Responsable, Jsonable
             ),
             true
         );
-    }
-
-    protected function getSrcSet(array $srcSet): string
-    {
-        return implode(', ', array_map(
-            fn (Closure $callback, string $size) => $callback(clone $this).' '.$size,
-            $srcSet, array_keys($srcSet)
-        ));
     }
 }

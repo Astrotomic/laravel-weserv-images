@@ -74,14 +74,17 @@ final class FactoryTest extends TestCase
         static::assertSame(
             <<<'HTML'
             <picture>
-                <source srcset="https://images.weserv.nl?output=webp&dpr=1&url=https%3A%2F%2Fexample.com%2Fimage.jpg 1x, https://images.weserv.nl?output=webp&dpr=2&url=https%3A%2F%2Fexample.com%2Fimage.jpg 2x" type="image/webp" />
-                <img src="https://images.weserv.nl?url=https%3A%2F%2Fexample.com%2Fimage.jpg" srcset="https://images.weserv.nl?dpr=1&url=https%3A%2F%2Fexample.com%2Fimage.jpg 1x, https://images.weserv.nl?dpr=2&url=https%3A%2F%2Fexample.com%2Fimage.jpg 2x" alt="My cool avatar" class="avatar" />
+                <source type="image/webp" src="https://images.weserv.nl?output=webp&url=https%3A%2F%2Fexample.com%2Fimage.jpg" srcset="https://images.weserv.nl?output=webp&dpr=1&url=https%3A%2F%2Fexample.com%2Fimage.jpg 1x, https://images.weserv.nl?output=webp&dpr=2&url=https%3A%2F%2Fexample.com%2Fimage.jpg 2x" />
+                <img alt="My cool avatar" class="avatar" src="https://images.weserv.nl?url=https%3A%2F%2Fexample.com%2Fimage.jpg" srcset="https://images.weserv.nl?dpr=1&url=https%3A%2F%2Fexample.com%2Fimage.jpg 1x, https://images.weserv.nl?dpr=2&url=https%3A%2F%2Fexample.com%2Fimage.jpg 2x" />
             </picture>
             HTML,
             (string) $url->toPicture([
+                'alt' => 'My cool avatar',
+                'class' => 'avatar',
+            ], [
                 '1x' => fn (Url $url) => $url->dpr(1),
                 '2x' => fn (Url $url) => $url->dpr(2),
-            ], 'My cool avatar', 'avatar')
+            ])
         );
     }
 }
