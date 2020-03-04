@@ -17,6 +17,16 @@ use Symfony\Component\HttpFoundation\Response;
 
 class Url extends BaseUrl implements Htmlable, Renderable, Responsable, Jsonable, JsonSerializable, Arrayable
 {
+    public function img(array $attr = [], array $srcSet = []): HtmlString
+    {
+        return new HtmlString($this->toImg($attr, $srcSet));
+    }
+
+    public function picture(array $attr = [], array $srcSet = []): HtmlString
+    {
+        return new HtmlString($this->toPicture($attr, $srcSet));
+    }
+
     public function render(): string
     {
         return $this->toHtml();
@@ -25,30 +35,6 @@ class Url extends BaseUrl implements Htmlable, Renderable, Responsable, Jsonable
     public function toHtml(): string
     {
         return $this->toImg();
-    }
-
-    public function toPicture(array $attr = [], array $srcSet = []): HtmlString
-    {
-        $attr['src'] = $this->toUrl();
-        if (! empty($srcSet)) {
-            $attr['srcset'] = $this->getSrcSet($srcSet);
-        }
-        $attributes = $this->getAttributes($attr);
-
-        $webpAttr['type'] = 'image/webp';
-        if (! empty($srcSet)) {
-            $webpAttr['srcset'] = (clone $this)->output(Output::WEBP)->getSrcSet($srcSet);
-        }
-        $webpAttributes = $this->getAttributes($webpAttr);
-
-        return new HtmlString(
-            <<<HTML
-            <picture>
-                <source {$webpAttributes} />
-                <img {$attributes} />
-            </picture>
-            HTML
-        );
     }
 
     public function toResponse($request): Response

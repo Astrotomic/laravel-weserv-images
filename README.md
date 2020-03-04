@@ -39,9 +39,37 @@ echo weserv('https://images.weserv.nl/lichtenstein.jpg')
 
 ### HTML
 
+#### <img>
+
+The `img()` method allows you to create a `<img>` tag with an optional `srcset`.
+The following example will create a `<img>` tag with a `srcset` for normal and retina screens.
+
+```php
+use Astrotomic\Weserv\Images\Laravel\Url;
+use Astrotomic\Weserv\Images\Enums\Fit;
+
+echo weserv('https://images.weserv.nl/lichtenstein.jpg')
+    ->w(512)
+    ->h(512)
+    ->we()
+    ->fit(Fit::INSIDE)
+    ->img([
+        'alt' => 'The alt text for this image', 
+        'class' => 'rounded',
+        'loading' => 'lazy',
+    ], [
+        '1x' => fn(Url $url) => $url->dpr(1),
+        '2x' => fn(Url $url) => $url->dpr(2),
+    ]);
+```
+
+```html
+<img alt="The alt text for this image" class="rounded" loading="lazy" src="https://images.weserv.nl?w=512&h=512&we=1&fit=inside&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg" srcset="https://images.weserv.nl?w=512&h=512&we=1&fit=inside&dpr=1&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 1x, https://images.weserv.nl?w=512&h=512&we=1&fit=inside&dpr=2&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 2x" />
+```
+
 #### <picture>
 
-The `toPicture()` method allows you to create a `<picture>` tag with `webp` support and `srcset`.
+The `picture()` method allows you to create a `<picture>` tag with `webp` support and `srcset`.
 The following example will create a `<picture>` tag with a `webp` source and a `srcset` for normal and retina screens.
 
 ```php
@@ -53,7 +81,7 @@ echo weserv('https://images.weserv.nl/lichtenstein.jpg')
     ->h(512)
     ->we()
     ->fit(Fit::INSIDE)
-    ->toPicture([
+    ->picture([
         'alt' => 'The alt text for this image', 
         'class' => 'rounded',
         'loading' => 'lazy',
