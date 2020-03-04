@@ -2,6 +2,11 @@
 
 All notable changes to `laravel-weserv-images` will be documented in this file
 
+## 0.5.0 - 2020-03-04
+
+- add Laravel 7 support
+- add `img()` and `picture()` methods with `HtmlString` return type
+
 ## 0.4.1 - 2020-03-02
 
 - remove deprecated `<source src>`
