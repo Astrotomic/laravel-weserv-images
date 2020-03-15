@@ -127,12 +127,10 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 ## Treeware
 
-You're free to use this package, but if it makes it to your production environment I would highly appreciate you buying the world a tree.
+You're free to use this package, but if it makes it to your production environment you are required to buy the world a tree.
 
-It’s now common knowledge that one of the best tools to tackle the climate crisis and keep our temperatures from rising above 1.5C is to [plant trees](https://www.bbc.co.uk/news/science-environment-48870920). If you contribute to my forest you’ll be creating employment for local families and restoring wildlife habitats.
+It’s now common knowledge that one of the best tools to tackle the climate crisis and keep our temperatures from rising above 1.5C is to <a href="https://www.bbc.co.uk/news/science-environment-48870920">plant trees</a>. If you support this package and contribute to the Treeware forest you’ll be creating employment for local families and restoring wildlife habitats.
 
-You can buy trees at https://offset.earth/treeware
+You can buy trees here [offset.earth/treeware](https://plant.treeware.earth/Astrotomic/laravel-weserv-images)
 
-Read more about Treeware at https://treeware.earth
-
-[![We offset our carbon footprint via Offset Earth](https://toolkit.offset.earth/carbonpositiveworkforce/badge/5e186e68516eb60018c5172b?black=true&landscape=true)](https://offset.earth/treeware)
+Read more about Treeware at [treeware.earth](http://treeware.earth)
