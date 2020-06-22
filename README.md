@@ -54,7 +54,7 @@ echo weserv('https://images.weserv.nl/lichtenstein.jpg')
     ->we()
     ->fit(Fit::INSIDE)
     ->img([
-        'alt' => 'The alt text for this image', 
+        'alt' => 'The alt text for this image',
         'class' => 'rounded',
         'loading' => 'lazy',
     ], [
@@ -64,7 +64,16 @@ echo weserv('https://images.weserv.nl/lichtenstein.jpg')
 ```
 
 ```html
-<img alt="The alt text for this image" class="rounded" loading="lazy" src="https://images.weserv.nl?w=512&h=512&we=1&fit=inside&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg" srcset="https://images.weserv.nl?w=512&h=512&we=1&fit=inside&dpr=1&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 1x, https://images.weserv.nl?w=512&h=512&we=1&fit=inside&dpr=2&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 2x" />
+<img
+  alt="The alt text for this image"
+  class="rounded"
+  loading="lazy"
+  src="https://images.weserv.nl?w=512&h=512&we=1&fit=inside&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg"
+  srcset="
+    https://images.weserv.nl?w=512&h=512&we=1&fit=inside&dpr=1&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 1x,
+    https://images.weserv.nl?w=512&h=512&we=1&fit=inside&dpr=2&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 2x
+  "
+/>
 ```
 
 #### <picture>
@@ -82,7 +91,7 @@ echo weserv('https://images.weserv.nl/lichtenstein.jpg')
     ->we()
     ->fit(Fit::INSIDE)
     ->picture([
-        'alt' => 'The alt text for this image', 
+        'alt' => 'The alt text for this image',
         'class' => 'rounded',
         'loading' => 'lazy',
     ], [
@@ -93,14 +102,29 @@ echo weserv('https://images.weserv.nl/lichtenstein.jpg')
 
 ```html
 <picture>
-   <source type="image/webp" srcset="https://images.weserv.nl?w=512&h=512&we=1&fit=inside&output=webp&dpr=1&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 1x, https://images.weserv.nl?w=512&h=512&we=1&fit=inside&output=webp&dpr=2&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 2x" />
-   <img alt="The alt text for this image" class="rounded" loading="lazy" src="https://images.weserv.nl?w=512&h=512&we=1&fit=inside&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg" srcset="https://images.weserv.nl?w=512&h=512&we=1&fit=inside&dpr=1&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 1x, https://images.weserv.nl?w=512&h=512&we=1&fit=inside&dpr=2&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 2x" />
+  <source
+    type="image/webp"
+    srcset="
+      https://images.weserv.nl?w=512&h=512&we=1&fit=inside&output=webp&dpr=1&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 1x,
+      https://images.weserv.nl?w=512&h=512&we=1&fit=inside&output=webp&dpr=2&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 2x
+    "
+  />
+  <img
+    alt="The alt text for this image"
+    class="rounded"
+    loading="lazy"
+    src="https://images.weserv.nl?w=512&h=512&we=1&fit=inside&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg"
+    srcset="
+      https://images.weserv.nl?w=512&h=512&we=1&fit=inside&dpr=1&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 1x,
+      https://images.weserv.nl?w=512&h=512&we=1&fit=inside&dpr=2&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg 2x
+    "
+  />
 </picture>
 ```
 
 ### Testing
 
-``` bash
+```bash
 composer test
 ```
 
