@@ -7,34 +7,17 @@ use Astrotomic\Weserv\Images\Url as BaseUrl;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Jsonable;
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\HtmlString;
 use JsonSerializable;
 use Symfony\Component\HttpFoundation\Response;
 
-class Url extends BaseUrl implements Htmlable, Renderable, Responsable, Jsonable, JsonSerializable, Arrayable
+class Url extends BaseUrl implements Htmlable, Responsable, Jsonable, JsonSerializable, Arrayable
 {
-    public function img(array $attr = [], array $srcSet = []): HtmlString
-    {
-        return new HtmlString($this->toImg($attr, $srcSet));
-    }
-
-    public function picture(array $attr = [], array $srcSet = []): HtmlString
-    {
-        return new HtmlString($this->toPicture($attr, $srcSet));
-    }
-
-    public function render(): string
-    {
-        return $this->toHtml();
-    }
-
     public function toHtml(): string
     {
-        return $this->toImg();
+        return $this->toUrl();
     }
 
     public function toResponse($request): Response
