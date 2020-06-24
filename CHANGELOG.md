@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-weserv-images` will be documented in this file
 
+## 1.0.0 - 2020-06-24
+
+- drop `\Astrotomic\Weserv\Images\Laravel\Url::img()`
+- drop `\Astrotomic\Weserv\Images\Laravel\Url::picture()`
+- drop `\Astrotomic\Weserv\Images\Laravel\Url::render()`
+
 ## 0.5.0 - 2020-03-04
 
 - add Laravel 7 support
