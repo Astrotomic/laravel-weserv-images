@@ -37,13 +37,13 @@ echo weserv('https://images.weserv.nl/lichtenstein.jpg')
 
 ![](https://images.weserv.nl/?w=512&h=512&we=1&fit=inside&url=https%3A%2F%2Fimages.weserv.nl%2Flichtenstein.jpg)
 
-### Testing
+## Testing
 
 ```bash
 composer test
 ```
 
-### Changelog
+## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
